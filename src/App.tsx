@@ -4,14 +4,17 @@ import "./App.css";
 import { Application } from "./components/application/application";
 import Greet from "./components/greet/greet";
 import { Skills } from "./components/skills/skills";
+import Counter from "./components/counter/counter";
+import { AppProviders } from "./providers/app-providers";
+import { MuiMode } from "./components/mui/mui-mode";
 
 function App() {
   return (
-    <div className="App">
-      <Greet />
-      <Application />
-      <Skills skills={['HTML', 'CSS']} />
-    </div>
+    <AppProviders>
+      <div className="App">
+        <MuiMode />
+      </div>
+    </AppProviders>
   );
 }
 
