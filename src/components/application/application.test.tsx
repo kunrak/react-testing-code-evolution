@@ -10,13 +10,12 @@ describe("Application", () => {
     });
     expect(pageHeading).toBeInTheDocument();
 
-    const sectionHeading = screen.getByRole('heading', {
+    const sectionHeading = screen.getByRole("heading", {
       level: 2,
-    })
-
+    });
 
     const nameElement = screen.getByRole("textbox", {
-      name: 'Name'
+      name: "Name",
     });
     expect(nameElement).toBeInTheDocument();
 
@@ -25,9 +24,9 @@ describe("Application", () => {
     });
     expect(nameElement2).toBeInTheDocument();
 
-    const bioElement = screen.getByRole('textbox', {
-      name: 'Bio'
-    })
+    const bioElement = screen.getByRole("textbox", {
+      name: "Bio",
+    });
     expect(bioElement).toBeInTheDocument();
 
     const jobLocationElement = screen.getByRole("combobox");
@@ -36,10 +35,13 @@ describe("Application", () => {
     const termsElement = screen.getByRole("checkbox");
     expect(termsElement).toBeInTheDocument();
 
-    const termsElement2 = screen.getByLabelText("I agree to the terms and conditons")
+    const termsElement2 = screen.getByLabelText(
+      "I agree to the terms and conditons",
+    );
     expect(termsElement2).toBeInTheDocument();
 
     const submitButtonElement = screen.getByRole("button");
     expect(submitButtonElement).toBeInTheDocument();
+    expect(submitButtonElement).toBeDisabled();
   });
 });
